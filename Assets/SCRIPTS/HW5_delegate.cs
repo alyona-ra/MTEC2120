@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class HW5_delegate : MonoBehaviour
 {
     public delegate void OnClickEventDelegate(GameObject g);
-    public event OnClickEventDelegate OnClickEvent;
+    public static event OnClickEventDelegate OnClickEvent;
     public bool clicked;
 
     private void Start()
