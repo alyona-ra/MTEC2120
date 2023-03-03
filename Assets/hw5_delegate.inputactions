@@ -6,12 +6,12 @@
             "id": "3e4ae27c-120c-470a-bfaf-29575bea4462",
             "actions": [
                 {
-                    "name": "click",
+                    "name": "Click",
                     "type": "Button",
                     "id": "f734d01e-5333-47dd-8d4d-1deb213805e8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -20,10 +20,10 @@
                     "name": "",
                     "id": "38c66f1a-4cb8-4df0-8510-aeb092c0072c",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
-                    "action": "click",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

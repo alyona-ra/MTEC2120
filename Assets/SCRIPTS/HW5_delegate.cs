@@ -5,22 +5,40 @@ using UnityEngine.InputSystem;
 
 public class HW5_delegate : MonoBehaviour
 {
-    // Event Handler
-    public delegate void OnClickEventDelegate();
+    public delegate void OnClickEventDelegate(GameObject g);
     public event OnClickEventDelegate OnClickEvent;
+    public bool clicked;
+
+    private void Start()
+    {
+        OnClickEvent += Listener;
+    }
 
     private void Update()
     {
-        OnClickEvent = OnClick;
-    }
-
-    private void OnClick()
-    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit[] hits = Physics.RaycastAll(ray);
-        for (int i = 0; i < hits.Length; i++)
+        if (clicked)
         {
-            Debug.Log(hits[i].collider.gameObject.name);
+            for (int i = 0; i < hits.Length; i++)
+            {
+                OnClickEvent?.Invoke(hits[i].collider.gameObject);
+            }
         }
+    }
+
+    private void Listener(GameObject g)
+    {
+        Debug.Log(g.name);
+    }
+
+    private void OnClick(InputValue value)
+    {
+        ClickInput(value.isPressed);
+    }
+
+    private void ClickInput(bool clickedState)
+    {
+        clicked = clickedState;
     }
 }
