@@ -75,8 +75,8 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
-        public GameObject projectile;
-        public GameObject gun;
+        //public GameObject projectile;
+        //public GameObject gun;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -162,7 +162,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
-            ShootCheck();
+            //ShootCheck();
         }
 
         private void LateUpdate()
@@ -215,27 +215,27 @@ namespace StarterAssets
                 _cinemachineTargetYaw, 0.0f);
         }
 
-        private void Fire()
-        {
-            var transform = this.transform;
-            var newProjectile = Instantiate(projectile);
-            newProjectile.transform.position = gun.transform.position + transform.forward * 0.3f;
-            newProjectile.transform.rotation = transform.rotation;
-            const float size = 0.2f;
-            newProjectile.transform.localScale *= size;
-            newProjectile.GetComponent<Rigidbody>().mass = Mathf.Pow(1, 3);
-            newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 20f, ForceMode.Impulse);
-            newProjectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
+        //private void Fire()
+        //{
+        //    var transform = this.transform;
+        //    var newProjectile = Instantiate(projectile);
+        //    newProjectile.transform.position = gun.transform.position + transform.forward * 0.3f;
+        //    newProjectile.transform.rotation = transform.rotation;
+        //    const float size = 0.2f;
+        //    newProjectile.transform.localScale *= size;
+        //    newProjectile.GetComponent<Rigidbody>().mass = Mathf.Pow(1, 3);
+        //    newProjectile.GetComponent<Rigidbody>().AddForce(transform.forward * 20f, ForceMode.Impulse);
+        //    newProjectile.GetComponent<MeshRenderer>().material.color = new Color(Random.value, Random.value, Random.value, 1.0f);
 
-        }
+        //}
 
-        private void ShootCheck()
-        {
-            if (_input.shoot)
-            {
-                Fire();
-            }
-        }
+        //private void ShootCheck()
+        //{
+        //    if (_input.shoot)
+        //    {
+        //        Fire();
+        //    }
+        //}
 
         private void Move()
         {
