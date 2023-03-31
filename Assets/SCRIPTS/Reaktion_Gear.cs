@@ -17,7 +17,7 @@ public class Reaktion_Gear : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Reactor Output: " + reaktor.Output + " || shit: " + toLinear(reaktor.Output * scale));
+        //Debug.Log("Reactor Output: " + reaktor.Output + " || Linear: " + toLinear(reaktor.Output * scale));
 
         fire = GameObject.FindGameObjectWithTag("Fire");
         ParticleSystem.MainModule ps = fire.GetComponent<ParticleSystem>().main;
