@@ -92,6 +92,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "FireRestock",
+                    "type": "Button",
+                    "id": "b804c931-0185-4c1f-bd76-c7467888a159",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -103,6 +112,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "FireControl",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ea4b0dc-450d-4c40-b1db-d9b443d1a03e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireRestock",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
